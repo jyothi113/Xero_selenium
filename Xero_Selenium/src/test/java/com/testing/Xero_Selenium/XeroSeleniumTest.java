@@ -21,7 +21,8 @@ public class XeroSeleniumTest{
 		//SignupToXDC_2D();
 		//SignupToXDC_2E();
 		//TestAllTabs_3A();
-		LogoutFunctionality_4A();
+		//LogoutFunctionality_4A();
+		UpLoadProfileImage_6A();
 		
 	}
 	
@@ -446,7 +447,7 @@ public class XeroSeleniumTest{
 }*/
 	
 //--------------------------------------------------------------------------------------------		
-public static void LogoutFunctionality_4A() throws InterruptedException{
+/*public static void LogoutFunctionality_4A() throws InterruptedException{
 		
 		System.out.println("TestAllTabs");
 		
@@ -478,7 +479,55 @@ public static void LogoutFunctionality_4A() throws InterruptedException{
 		System.out.println("logout successful");
 		Thread.sleep(2000);
 		driver.quit();
+}*/
+public static void UpLoadProfileImage_6A() throws InterruptedException{
+		
+		System.out.println("Upload Profile Image");
+		
+		System.setProperty("webdriver.chrome.driver","C:\\Jyothi\\drivers\\chromedriver.exe");
+		WebDriver driver;
+		driver = new ChromeDriver();
+		driver.get("https://login.xero.com/");
+		
+		WebElement userName = driver.findElement(By.xpath("//input[@id='email']"));
+		userName.sendKeys("jyothipraveena194@gmail.com");
+		
+		System.out.println("email Entered");
+		
+		WebElement passWord =driver.findElement(By.xpath("//input[@id='password']"));
+		passWord.sendKeys("Xero1234");
+		System.out.println("password Entered");
+		
+		WebElement loginButton = driver.findElement(By.xpath("//button[@id='submitButton']"));
+		loginButton.click();
+		System.out.println("login successful");
+		
+		Thread.sleep(2000);
+		
+		WebElement UserName = driver.findElement(By.xpath("//abbr[@class='xrh-avatar xrh-avatar-color-2']"));
+		UserName.click();
+		Thread.sleep(2000);
+		
+		WebElement EditProfile = driver.findElement(By.xpath("//a[contains(text(),'Edit profile')]"));
+		EditProfile.click();
+		Thread.sleep(2000);
+		
+		WebElement UploadImageButton = driver.findElement(By.xpath("//span[@id='button-1041-btnInnerEl']"));
+		UploadImageButton.click();
+		Thread.sleep(2000);
+
+		WebElement browseButton = driver.findElement(By.xpath("//input[@id='filefield-1174-button-fileInputEl']"));
+		browseButton.click();
+		Thread.sleep(2000);
+	
+		WebElement UploadButton = driver.findElement(By.xpath("//div[@id='button-1178']"));
+		UploadButton.click();
+		Thread.sleep(2000);
+		
+		
+		
 }
+	
 }
 
 
