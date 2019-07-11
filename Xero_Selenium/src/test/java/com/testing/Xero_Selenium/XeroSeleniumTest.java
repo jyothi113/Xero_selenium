@@ -16,7 +16,8 @@ public class XeroSeleniumTest{
 		//IncorrectEmail_1C();
 		//ForgotPassword_1D();
 		//SignupToXDC_2A();
-		SignupToXDC_2B();
+		//SignupToXDC_2B();
+		SignupToXDC_2C();
 	}
 	
 	
@@ -174,7 +175,7 @@ public class XeroSeleniumTest{
 		
 //----------------------------------------------------------------------------------------------------	
 
-public static void SignupToXDC_2B() throws InterruptedException{
+/*public static void SignupToXDC_2B() throws InterruptedException{
 		
 		System.out.println("SignupToXDC_2B");
 		
@@ -195,7 +196,7 @@ public static void SignupToXDC_2B() throws InterruptedException{
 		//GetStarted.click();
 		//System.out.println("Error message displayed");
 		//Thread.sleep(2000);
-		//driver.quit();
+		//driver.quit();*/
 		
 		// code with Enter Email in wrong format
 		
@@ -234,7 +235,7 @@ public static void SignupToXDC_2B() throws InterruptedException{
 		
 		//code with clicking get started without selecting the term and policy check box
 		
-		WebElement FirstName = driver.findElement(By.xpath("//input[@name='FirstName']"));
+		/*WebElement FirstName = driver.findElement(By.xpath("//input[@name='FirstName']"));
 		FirstName.sendKeys("jyothi1234");
 		System.out.println("Entered first name");
 		
@@ -261,12 +262,41 @@ public static void SignupToXDC_2B() throws InterruptedException{
 		
 		WebElement GetStartedButton = driver.findElement(By.xpath("//button[@class='btn btn-primary']"));
 		GetStartedButton.click();
-		System.out.println("Clicked GetStarted");
+		System.out.println("Clicked GetStarted");		
+}*/
+public static void SignupToXDC_2C() throws InterruptedException{
+		
+		System.out.println("SignupToXDC_2C");
+		
+		System.setProperty("webdriver.chrome.driver","C:\\Jyothi\\drivers\\chromedriver.exe");
+		WebDriver driver;
+		driver = new ChromeDriver();
+		driver.get("https://www.xero.com/us/");
+	
+		WebElement FreeTrail = driver.findElement(By.xpath("//a[@class='btn btn-primary global-ceiling-bar-btn']"));
+		FreeTrail.click();
+		System.out.println("Clicked freeTrail");
+		Thread.sleep(2000);
+		System.out.println("A 30 day freeTrail page is dispalyed");
 		
 		
+		WebElement TermsofUseLink = driver.findElement(By.xpath("//a[contains(text(),'terms of use')]"));
+		TermsofUseLink.click();
+		System.out.println("Clicked TermsofUse Link");
+		System.out.println("TermsofUse Page opened");
 		
+		
+		Thread.sleep(3000);
+	
+		WebElement PrivacyNoticeLink = driver.findElement(By.xpath("//a[contains(text(),'privacy notice')]"));
+		PrivacyNoticeLink.click();
+		System.out.println("Clicked PrivacyNotice Link");
+		System.out.println("PrivacyNotice Page opened");
+		
+		Thread.sleep(2000);
 		
 }
+
 }
 
 
