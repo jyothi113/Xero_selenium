@@ -189,13 +189,17 @@ public static void SignupToXDC_2B() throws InterruptedException{
 		Thread.sleep(2000);
 		System.out.println("A 30 day freeTrail page is dispalyed");
 		
+		//code with clicking get started without filling fields
+		
 		//WebElement GetStarted = driver.findElement(By.xpath("//span[@class='g-recaptcha-submit']"));
 		//GetStarted.click();
 		//System.out.println("Error message displayed");
 		//Thread.sleep(2000);
 		//driver.quit();
 		
-		WebElement FirstName = driver.findElement(By.xpath("//input[@name='FirstName']"));
+		// code with Enter Email in wrong format
+		
+		/*WebElement FirstName = driver.findElement(By.xpath("//input[@name='FirstName']"));
 		FirstName.sendKeys("jyothi1234");
 		System.out.println("Entered first name");
 		
@@ -226,7 +230,40 @@ public static void SignupToXDC_2B() throws InterruptedException{
 		
 		WebElement GetStartedButton = driver.findElement(By.xpath("//button[@class='btn btn-primary']"));
 		GetStartedButton.click();
+		System.out.println("Clicked GetStarted");*/
+		
+		//code with clicking get started without selecting the term and policy check box
+		
+		WebElement FirstName = driver.findElement(By.xpath("//input[@name='FirstName']"));
+		FirstName.sendKeys("jyothi1234");
+		System.out.println("Entered first name");
+		
+		
+		WebElement LastName = driver.findElement(By.xpath("//input[@name='LastName']"));
+		LastName.sendKeys("xyz");
+		System.out.println("Entered second name");
+		
+		WebElement emailAddress = driver.findElement(By.xpath("//input[@name='EmailAddress']"));
+		emailAddress.sendKeys("jyothipraveena194@gmail.com");
+		System.out.println("Entered email");
+		
+		WebElement phoneNumber = driver.findElement(By.xpath("//input[@name='PhoneNumber']"));
+		phoneNumber.sendKeys("7832983083");
+		System.out.println("Entered phone number");
+		
+		WebElement Country = driver.findElement(By.xpath("//select[@name='LocationCode']"));
+		
+		Select CountryDropdown =new Select(Country);
+		CountryDropdown.selectByVisibleText("India");
+		System.out.println("selected country ");
+		
+		
+		
+		WebElement GetStartedButton = driver.findElement(By.xpath("//button[@class='btn btn-primary']"));
+		GetStartedButton.click();
 		System.out.println("Clicked GetStarted");
+		
+		
 		
 		
 }
