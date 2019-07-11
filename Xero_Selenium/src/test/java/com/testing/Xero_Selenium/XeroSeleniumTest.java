@@ -1,6 +1,7 @@
 package com.testing.Xero_Selenium;
 
 import org.openqa.selenium.By;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -14,8 +15,8 @@ public class XeroSeleniumTest{
 		//IncorrectPassword_1B();
 		//IncorrectEmail_1C();
 		//ForgotPassword_1D();
-		SignupToXDC_2A();
-		
+		//SignupToXDC_2A();
+		SignupToXDC_2B();
 	}
 	
 	
@@ -121,7 +122,7 @@ public class XeroSeleniumTest{
 		
 }*/
 //-------------------------------------------------------------------------------------------------	
-public static void SignupToXDC_2A() throws InterruptedException{
+/*public static void SignupToXDC_2A() throws InterruptedException{
 		
 		System.out.println("SignupToXDC_2A");
 		
@@ -169,12 +170,32 @@ public static void SignupToXDC_2A() throws InterruptedException{
 		GetStartedButton.click();
 		System.out.println("Clicked GetStarted");
 		
-}
+}*/
 		
 //----------------------------------------------------------------------------------------------------	
+
+public static void SignupToXDC_2B() throws InterruptedException{
+		
+		System.out.println("SignupToXDC_2B");
+		
+		System.setProperty("webdriver.chrome.driver","C:\\Jyothi\\drivers\\chromedriver.exe");
+		WebDriver driver;
+		driver = new ChromeDriver();
+		driver.get("https://www.xero.com/us/");
 	
-	
-	
+		WebElement FreeTrail = driver.findElement(By.xpath("//a[@class='btn btn-primary global-ceiling-bar-btn']"));
+		FreeTrail.click();
+		System.out.println("Clicked freeTrail");
+		Thread.sleep(2000);
+		System.out.println("A 30 day freeTrail page is dispalyed");
+		
+		WebElement GetStarted = driver.findElement(By.xpath("//span[@class='g-recaptcha-submit']"));
+		GetStarted.click();
+		System.out.println("Error message displayed");
+		Thread.sleep(2000);
+		driver.quit();
+		
+}
 }
 
 
