@@ -18,7 +18,8 @@ public class XeroSeleniumTest{
 		//SignupToXDC_2A();
 		//SignupToXDC_2B();
 		//SignupToXDC_2C();
-		SignupToXDC_2D();
+		//SignupToXDC_2D();
+		SignupToXDC_2E();
 		
 	}
 	
@@ -302,7 +303,7 @@ public class XeroSeleniumTest{
 		
 }*/
 	//--------------------------------------------------------------------------------------------	
-public static void SignupToXDC_2D() throws InterruptedException{
+/*public static void SignupToXDC_2D() throws InterruptedException{
 		
 		System.out.println("SignupToXDC_2D");
 		
@@ -322,6 +323,31 @@ public static void SignupToXDC_2D() throws InterruptedException{
 		OfferDetailsLink.click();
 		System.out.println("Clicked OfferDetails Link");
 		System.out.println("OfferDetails Page opened");
+	
+		Thread.sleep(3000);
+		driver.quit();
+}*/
+	
+public static void SignupToXDC_2E() throws InterruptedException{
+		
+		System.out.println("SignupToXDC_2E");
+		
+		System.setProperty("webdriver.chrome.driver","C:\\Jyothi\\drivers\\chromedriver.exe");
+		WebDriver driver;
+		driver = new ChromeDriver();
+		driver.get("https://www.xero.com/us/");
+	
+		WebElement FreeTrail = driver.findElement(By.xpath("//a[@class='btn btn-primary global-ceiling-bar-btn']"));
+		FreeTrail.click();
+		System.out.println("Clicked freeTrail");
+		Thread.sleep(2000);
+		System.out.println("A 30 day freeTrail page is dispalyed");
+		
+		
+		WebElement AccounttantBookkeeperLink = driver.findElement(By.xpath("//a[contains(text(),'accountant or bookkeeper')]"));
+		AccounttantBookkeeperLink.click();
+		System.out.println("Clicked AccounttantBookkeeper Link");
+		System.out.println("AccounttantBookkeeper Page opened");
 	
 		Thread.sleep(3000);
 		driver.quit();
