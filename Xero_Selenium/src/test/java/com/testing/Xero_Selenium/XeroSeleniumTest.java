@@ -19,7 +19,8 @@ public class XeroSeleniumTest{
 		//SignupToXDC_2B();
 		//SignupToXDC_2C();
 		//SignupToXDC_2D();
-		SignupToXDC_2E();
+		//SignupToXDC_2E();
+		TestAllTabs_3A();
 		
 	}
 	
@@ -318,7 +319,7 @@ public class XeroSeleniumTest{
 		Thread.sleep(2000);
 		System.out.println("A 30 day freeTrail page is dispalyed");
 		
-		
+		Thread.sleep(3000);
 		WebElement OfferDetailsLink = driver.findElement(By.xpath("//a[contains(text(),'offer details')]"));
 		OfferDetailsLink.click();
 		System.out.println("Clicked OfferDetails Link");
@@ -327,8 +328,8 @@ public class XeroSeleniumTest{
 		Thread.sleep(3000);
 		driver.quit();
 }*/
-	
-public static void SignupToXDC_2E() throws InterruptedException{
+//--------------------------------------------------------------------------------------------		
+/*public static void SignupToXDC_2E() throws InterruptedException{
 		
 		System.out.println("SignupToXDC_2E");
 		
@@ -343,7 +344,7 @@ public static void SignupToXDC_2E() throws InterruptedException{
 		Thread.sleep(2000);
 		System.out.println("A 30 day freeTrail page is dispalyed");
 		
-		
+		Thread.sleep(3000);
 		WebElement AccounttantBookkeeperLink = driver.findElement(By.xpath("//a[contains(text(),'accountant or bookkeeper')]"));
 		AccounttantBookkeeperLink.click();
 		System.out.println("Clicked AccounttantBookkeeper Link");
@@ -351,6 +352,95 @@ public static void SignupToXDC_2E() throws InterruptedException{
 	
 		Thread.sleep(3000);
 		driver.quit();
+}*/
+//--------------------------------------------------------------------------------------------		
+public static void TestAllTabs_3A() throws InterruptedException{
+		
+		System.out.println("TestAllTabs");
+		
+		System.setProperty("webdriver.chrome.driver","C:\\Jyothi\\drivers\\chromedriver.exe");
+		WebDriver driver;
+		driver = new ChromeDriver();
+		driver.get("https://login.xero.com/");
+		
+		WebElement userName = driver.findElement(By.xpath("//input[@id='email']"));
+		userName.sendKeys("jyothipraveena194@gmail.com");
+		
+		System.out.println("email Entered");
+		
+		WebElement passWord =driver.findElement(By.xpath("//input[@id='password']"));
+		passWord.sendKeys("Xero1234");
+		System.out.println("password Entered");
+		
+		WebElement loginButton = driver.findElement(By.xpath("//button[@id='submitButton']"));
+		loginButton.click();
+		System.out.println("login successful");
+		System.out.println("you are currently using trail account is displayed");
+		Thread.sleep(2000);
+		
+		WebElement DashBoard = driver.findElement(By.xpath("//a[@class='xrh-focusable xrh-tab--body xrh-tab--body-is-selected']"));
+		DashBoard.click();
+		System.out.println("In dashboard page");
+		
+		
+		WebElement Accounts = driver.findElement(By.xpath("//button[contains(text(),'Accounting')]"));
+		Accounts.click();
+	
+		System.out.println("Accounts dropdown");
+		
+		Thread.sleep(2000);
+		WebElement Report = driver.findElement(By.xpath("//div[@class='xrh-dropdown--body']//a[@class='xrh-verticalmenuitem--body'][contains(text(),'Reports')]"));
+		Report.click();
+		System.out.println("Report dropdown page");
+		Thread.sleep(2000);
+		
+		WebElement contacts = driver.findElement(By.xpath("//button[contains(text(),'Contacts')]"));
+		contacts.click();
+		System.out.println("Contacts dropdown page");
+		Thread.sleep(2000);
+		
+		WebElement Allcontacts = driver.findElement(By.xpath("//a[contains(text(),'All contacts')]"));
+		Allcontacts.click();
+		System.out.println("All Contacts page");
+		Thread.sleep(2000);
+		
+		WebElement abcdropdown = driver.findElement(By.xpath("//span[@class='xrh-appbutton--text']"));
+		abcdropdown.click();
+		Thread.sleep(2000);
+		
+		WebElement settings = driver.findElement(By.xpath("//a[contains(text(),'Settings')]"));
+		settings.click();	
+		System.out.println("settings page opened");
+		Thread.sleep(2000);
+		
+		WebElement plus = driver.findElement(By.xpath("//li[1]//button[1]//div[1]"));
+		plus.click();
+		System.out.println("new dropdown page opened");
+		Thread.sleep(3000);
+		
+		WebElement abcdropdown1 = driver.findElement(By.xpath("//span[contains(text(),'abc')]"));
+		abcdropdown1.click();
+		Thread.sleep(4000);
+		
+		WebElement filePage = driver.findElement(By.xpath("//a[@class='xrh-verticalmenuitem--body'][contains(text(),'Dashboard')]"));
+		filePage.click();	
+		System.out.println("files page opened");
+		Thread.sleep(2000);
+		
+		WebElement notification = driver.findElement(By.xpath("//li[3]//button[1]//div[1]"));
+		notification.click();	
+		System.out.println("Notification page shown");
+		Thread.sleep(2000);
+		
+		WebElement search = driver.findElement(By.xpath("//li[@class='xrh-addon xrh-addon-alwaysvisible']//*[@class='xrh-icon xrh-icon-svg']"));
+		search.click();	
+		System.out.println("search field is shown");
+		Thread.sleep(2000);
+		
+		WebElement help = driver.findElement(By.xpath("//body[@class='center xeroV2 bridge ext-chrome x-sandbox']/div[@id='header']/header[@class='xrh-header xrh-header-business xrh-header-narrow']/div[@class='xrh-header--main']/ol[@class='xrh-addons xrh-header-background-color']/li[4]/button[1]/div[1]/*[1]"));
+		help.click();	
+		System.out.println("help field is shown with- What do you need help with?");
+		Thread.sleep(2000);
 }
 }
 
