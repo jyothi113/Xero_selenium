@@ -10,12 +10,12 @@ public class XeroSeleniumTest{
 	public static void main(String[] args) throws InterruptedException{
 		
 		//NavigateToXero1();
-		IncorrectPassword2();
-		
+		//IncorrectPassword2();
+		IncorrectEmail_1C();
 	}
 	
 	
-	/*public static void NavigateToXero1() throws InterruptedException{
+	/*public static void NavigateToXero_1A() throws InterruptedException{
 		
 		System.out.println("Navigate to Xero");
 		
@@ -41,7 +41,7 @@ public class XeroSeleniumTest{
 	}*/
 	//-----------------------------------------------------------------------------------------	
 	
-		 public static void IncorrectPassword2() throws InterruptedException{
+		/* public static void IncorrectPassword_1B() throws InterruptedException{
 				
 				System.out.println("Incorrectpassword");
 				
@@ -65,6 +65,30 @@ public class XeroSeleniumTest{
 				Thread.sleep(2000);
 				 driver.quit();
 	
+	}*/
+	//---------------------------------------------------------------------------------------------------
+	public static void IncorrectEmail_1C() throws InterruptedException{
+		
+		System.out.println("IncorrectEmail");
+		
+		System.setProperty("webdriver.chrome.driver","C:\\Jyothi\\drivers\\chromedriver.exe");
+		WebDriver driver;
+		driver = new ChromeDriver();
+		driver.get("https://login.xero.com/");
+		
+		WebElement userName = driver.findElement(By.xpath("//input[@id='email']"));
+		userName.sendKeys("user@gmail.com");
+		
+		System.out.println("In correct email Entered");
+		
+		WebElement passWord =driver.findElement(By.xpath("//input[@id='password']"));
+		passWord.sendKeys("Xero1234");
+		System.out.println("password Entered");
+		
+		WebElement loginButton = driver.findElement(By.xpath("//button[@id='submitButton']"));
+		loginButton.click();
+		System.out.println("error message displayed");
+		Thread.sleep(2000);
+		 driver.quit();
 	}
-	
 }
