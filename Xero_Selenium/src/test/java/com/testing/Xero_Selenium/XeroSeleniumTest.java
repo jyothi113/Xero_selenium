@@ -20,7 +20,8 @@ public class XeroSeleniumTest{
 		//SignupToXDC_2C();
 		//SignupToXDC_2D();
 		//SignupToXDC_2E();
-		TestAllTabs_3A();
+		//TestAllTabs_3A();
+		LogoutFunctionality_4A();
 		
 	}
 	
@@ -354,7 +355,7 @@ public class XeroSeleniumTest{
 		driver.quit();
 }*/
 //--------------------------------------------------------------------------------------------		
-public static void TestAllTabs_3A() throws InterruptedException{
+/*public static void TestAllTabs_3A() throws InterruptedException{
 		
 		System.out.println("TestAllTabs");
 		
@@ -441,6 +442,42 @@ public static void TestAllTabs_3A() throws InterruptedException{
 		help.click();	
 		System.out.println("help field is shown with- What do you need help with?");
 		Thread.sleep(2000);
+		driver.quit();
+}*/
+	
+//--------------------------------------------------------------------------------------------		
+public static void LogoutFunctionality_4A() throws InterruptedException{
+		
+		System.out.println("TestAllTabs");
+		
+		System.setProperty("webdriver.chrome.driver","C:\\Jyothi\\drivers\\chromedriver.exe");
+		WebDriver driver;
+		driver = new ChromeDriver();
+		driver.get("https://login.xero.com/");
+		
+		WebElement userName = driver.findElement(By.xpath("//input[@id='email']"));
+		userName.sendKeys("jyothipraveena194@gmail.com");
+		
+		System.out.println("email Entered");
+		
+		WebElement passWord =driver.findElement(By.xpath("//input[@id='password']"));
+		passWord.sendKeys("Xero1234");
+		System.out.println("password Entered");
+		
+		WebElement loginButton = driver.findElement(By.xpath("//button[@id='submitButton']"));
+		loginButton.click();
+		System.out.println("login successful");
+		
+		Thread.sleep(2000);
+		
+		WebElement UserMenuDropdown = driver.findElement(By.xpath("//abbr[@class='xrh-avatar xrh-avatar-color-2']"));
+		UserMenuDropdown.click();
+		
+		WebElement logOut = driver.findElement(By.xpath("//a[contains(text(),'Log out')]"));
+		logOut.click();
+		System.out.println("logout successful");
+		Thread.sleep(2000);
+		driver.quit();
 }
 }
 
