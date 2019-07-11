@@ -11,7 +11,8 @@ public class XeroSeleniumTest{
 		
 		//NavigateToXero1();
 		//IncorrectPassword2();
-		IncorrectEmail_1C();
+		//IncorrectEmail_1C();
+		ForgotPassword_1D();
 	}
 	
 	
@@ -67,7 +68,7 @@ public class XeroSeleniumTest{
 	
 	}*/
 	//---------------------------------------------------------------------------------------------------
-	public static void IncorrectEmail_1C() throws InterruptedException{
+	/*public static void IncorrectEmail_1C() throws InterruptedException{
 		
 		System.out.println("IncorrectEmail");
 		
@@ -90,5 +91,31 @@ public class XeroSeleniumTest{
 		System.out.println("error message displayed");
 		Thread.sleep(2000);
 		 driver.quit();
-	}
+	}*/
+	//-----------------------------------------------------------------------------------------------
+public static void ForgotPassword_1D() throws InterruptedException{
+		
+		System.out.println("ForgotPassword_1D");
+		
+		System.setProperty("webdriver.chrome.driver","C:\\Jyothi\\drivers\\chromedriver.exe");
+		WebDriver driver;
+		driver = new ChromeDriver();
+		driver.get("https://login.xero.com/");
+		
+		WebElement forgotPassword = driver.findElement(By.xpath("//a[@class='forgot-password-advert']"));
+		forgotPassword.click();
+		System.out.println("Clicked forgot password");
+		
+		WebElement forgotPasswordPage = driver.findElement(By.xpath("//input[@id='UserName']"));
+		forgotPasswordPage.sendKeys("jyothipraveena194@gmail.com");
+		System.out.println("email given to forgot password");
+		
+		WebElement sendLink = driver.findElement(By.xpath("//span[@class='text']"));
+		sendLink.click();
+		System.out.println("link to reset password is sent");
+		Thread.sleep(2000);
+		 driver.quit();
+		
+}
+	
 }
