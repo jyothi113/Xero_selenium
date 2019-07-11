@@ -17,7 +17,9 @@ public class XeroSeleniumTest{
 		//ForgotPassword_1D();
 		//SignupToXDC_2A();
 		//SignupToXDC_2B();
-		SignupToXDC_2C();
+		//SignupToXDC_2C();
+		SignupToXDC_2D();
+		
 	}
 	
 	
@@ -264,7 +266,9 @@ public class XeroSeleniumTest{
 		GetStartedButton.click();
 		System.out.println("Clicked GetStarted");		
 }*/
-public static void SignupToXDC_2C() throws InterruptedException{
+//--------------------------------------------------------------------------------------------
+
+	/*public static void SignupToXDC_2C() throws InterruptedException{
 		
 		System.out.println("SignupToXDC_2C");
 		
@@ -294,9 +298,34 @@ public static void SignupToXDC_2C() throws InterruptedException{
 		System.out.println("PrivacyNotice Page opened");
 		
 		Thread.sleep(2000);
+		driver.quit();
 		
+}*/
+	//--------------------------------------------------------------------------------------------	
+public static void SignupToXDC_2D() throws InterruptedException{
+		
+		System.out.println("SignupToXDC_2D");
+		
+		System.setProperty("webdriver.chrome.driver","C:\\Jyothi\\drivers\\chromedriver.exe");
+		WebDriver driver;
+		driver = new ChromeDriver();
+		driver.get("https://www.xero.com/us/");
+	
+		WebElement FreeTrail = driver.findElement(By.xpath("//a[@class='btn btn-primary global-ceiling-bar-btn']"));
+		FreeTrail.click();
+		System.out.println("Clicked freeTrail");
+		Thread.sleep(2000);
+		System.out.println("A 30 day freeTrail page is dispalyed");
+		
+		
+		WebElement OfferDetailsLink = driver.findElement(By.xpath("//a[contains(text(),'offer details')]"));
+		OfferDetailsLink.click();
+		System.out.println("Clicked OfferDetails Link");
+		System.out.println("OfferDetails Page opened");
+	
+		Thread.sleep(3000);
+		driver.quit();
 }
-
 }
 
 
