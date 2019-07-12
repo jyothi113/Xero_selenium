@@ -166,11 +166,12 @@ public class XeroSeleniumTest{
 		Select CountryDropdown =new Select(Country);
 		CountryDropdown.selectByVisibleText("India");
 		System.out.println("selected country ");
-		
+		Thread.sleep(9000);
 		
 		WebElement Terms = driver.findElement(By.xpath("//input[@name='TermsAccepted']"));
 		Terms.click();
 		System.out.println("checked terms checkbox");
+		Thread.sleep(10000);
 		
 		
 		WebElement GetStartedButton = driver.findElement(By.xpath("//button[@class='btn btn-primary']"));
@@ -233,7 +234,7 @@ public class XeroSeleniumTest{
 		WebElement Terms = driver.findElement(By.xpath("//input[@name='TermsAccepted']"));
 		Terms.click();
 		System.out.println("checked terms checkbox");
-		
+		Thread.sleep(9000);
 		
 		WebElement GetStartedButton = driver.findElement(By.xpath("//button[@class='btn btn-primary']"));
 		GetStartedButton.click();
@@ -263,7 +264,7 @@ public class XeroSeleniumTest{
 		Select CountryDropdown =new Select(Country);
 		CountryDropdown.selectByVisibleText("India");
 		System.out.println("selected country ");
-		
+		Thread.sleep(9000);
 		
 		
 		WebElement GetStartedButton = driver.findElement(By.xpath("//button[@class='btn btn-primary']"));
@@ -424,7 +425,7 @@ public class XeroSeleniumTest{
 		abcdropdown1.click();
 		Thread.sleep(4000);
 		
-		WebElement filePage = driver.findElement(By.xpath("//a[@class='xrh-verticalmenuitem--body'][contains(text(),'Dashboard')]"));
+		WebElement filePage = driver.findElement(By.xpath("//a[contains(text(),'Files')]"));
 		filePage.click();	
 		System.out.println("files page opened");
 		Thread.sleep(2000);
@@ -439,7 +440,7 @@ public class XeroSeleniumTest{
 		System.out.println("search field is shown");
 		Thread.sleep(2000);
 		
-		WebElement help = driver.findElement(By.xpath("//body[@class='center xeroV2 bridge ext-chrome x-sandbox']/div[@id='header']/header[@class='xrh-header xrh-header-business xrh-header-narrow']/div[@class='xrh-header--main']/ol[@class='xrh-addons xrh-header-background-color']/li[4]/button[1]/div[1]/*[1]"));
+		WebElement help = driver.findElement(By.xpath("//li[4]//button[1]//div[1]"));
 		help.click();	
 		System.out.println("help field is shown with- What do you need help with?");
 		Thread.sleep(2000);
@@ -507,25 +508,36 @@ public static void UpLoadProfileImage_6A() throws InterruptedException{
 		WebElement UserName = driver.findElement(By.xpath("//abbr[@class='xrh-avatar xrh-avatar-color-2']"));
 		UserName.click();
 		Thread.sleep(2000);
+		System.out.println("userName clicked");
 		
-		WebElement EditProfile = driver.findElement(By.xpath("//a[contains(text(),'Edit profile')]"));
+		WebElement EditProfile = driver.findElement(By.xpath("//li[@class='xrh-addon xrh-addon-lastvisible']//li[1]//a[1]"));
+		/*//a[contains(text(),'Edit profile')]*/
 		EditProfile.click();
 		Thread.sleep(2000);
+		System.out.println("Profile option clicked");
 		
 		WebElement UploadImageButton = driver.findElement(By.xpath("//span[@id='button-1041-btnInnerEl']"));
 		UploadImageButton.click();
-		Thread.sleep(2000);
-
-		WebElement browseButton = driver.findElement(By.xpath("//input[@id='filefield-1174-button-fileInputEl']"));
+		Thread.sleep(3000);
+		System.out.println("UploadImage Button clicked");
+		
+		
+		//WebElement Imageoption = driver.findElement(By.xpath("//div[@class='no-avatar']"));
+		//Imageoption.sendKeys("C:\\Users\\adudi\\Desktop");
+		WebElement browseButton = driver.findElement(By.xpath("//input[@id='filefield-1188-button-fileInputEl']"));
 		browseButton.click();
-		Thread.sleep(2000);
+		Thread.sleep(5000);
+		System.out.println("Browse Button clicked");
+		//browseButton.sendKeys("C:\\Users\\adudi\\Desktop");
+		
+		
+		
 	
 		WebElement UploadButton = driver.findElement(By.xpath("//div[@id='button-1178']"));
 		UploadButton.click();
 		Thread.sleep(2000);
 		
-		
-		
+	
 }
 	
 }
