@@ -23,8 +23,8 @@ public class XeroSeleniumTest{
 		//TestAllTabs_3A();
 		//LogoutFunctionality_4A();
 		//UpLoadProfileImage_6A();
-		AddAnotherOrgTrailVersion_8A();
-		
+		//AddAnotherOrgTrailVersion_8A();
+		AddAnotherOrgPaidVersion_8B();
 	}
 	
 	
@@ -540,7 +540,7 @@ public class XeroSeleniumTest{
 		
 	
 }*/
-public static void AddAnotherOrgTrailVersion_8A() throws InterruptedException{
+/*public static void AddAnotherOrgTrailVersion_8A() throws InterruptedException{
 		
 		System.out.println("Add Another Organization TrailVersion");
 		
@@ -612,8 +612,83 @@ public static void AddAnotherOrgTrailVersion_8A() throws InterruptedException{
 		startTrail.click();
 		Thread.sleep(2000);
 }
-
-	
+*/
+public static void AddAnotherOrgPaidVersion_8B() throws InterruptedException{
+		
+		System.out.println("Add Another Organization PaidVersion");
+		
+		System.setProperty("webdriver.chrome.driver","C:\\Jyothi\\drivers\\chromedriver.exe");
+		WebDriver driver;
+		driver = new ChromeDriver();
+		driver.get("https://www.xero.com/us/");
+		
+		WebElement LoginButton = driver.findElement(By.xpath("//a[@class='btn btn-tertiary-alt global-ceiling-bar-btn']"));
+		LoginButton.click();
+		Thread.sleep(4000);
+		
+		System.out.println("Navigated to login page");
+		WebElement userName = driver.findElement(By.xpath("//input[@id='email']"));
+		userName.sendKeys("jyothipraveena194@gmail.com");
+		
+		System.out.println("email Entered");
+		
+		WebElement passWord =driver.findElement(By.xpath("//input[@id='password']"));
+		passWord.sendKeys("Xero1234");
+		System.out.println("password Entered");
+		
+		WebElement loginButton = driver.findElement(By.xpath("//button[@id='submitButton']"));
+		loginButton.click();
+		System.out.println("login successful");
+		
+		Thread.sleep(2000);	
+		
+		WebElement abcdropdown1 = driver.findElement(By.xpath("//span[contains(text(),'abc')]"));
+		abcdropdown1.click();
+		System.out.println("dropdown page opened");
+		Thread.sleep(2000);
+		
+		WebElement MyXero = driver.findElement(By.xpath("//a[contains(text(),'My Xero')]"));
+		MyXero.click();
+		System.out.println("myXero clicked");
+		System.out.println("navigated to organizations page");
+		Thread.sleep(4000);
+		
+		WebElement addOrganizations = driver.findElement(By.xpath("//a[@id='ext-gen1042']"));
+		addOrganizations.click();
+		
+		
+		System.out.println("Organization name clicked");
+		Thread.sleep(2000);
+		WebElement orgName = driver.findElement(By.xpath("//input[@id='1e0a6bb1-ed82-4752-8e25-7221226b981a-control']"));
+		orgName.sendKeys("self");
+		Thread.sleep(2000);
+		WebElement OrgTax = driver.findElement(By.xpath("//div[@class='xui-autocompleter--trigger-focus']//div//div//div[@class='xui-iconwrapper xui-iconwrapper-medium']"));
+		OrgTax.click();
+		Thread.sleep(2000);
+		WebElement US = driver.findElement(By.xpath("(//div[@class='xui-textinput xui-textinput-medium'])[2]"));
+		US.click();
+		Thread.sleep(2000);
+		WebElement TimeZone = driver.findElement(By.xpath("//div[@class='xui-autocompleter--trigger-focus']//div//div//div[@class='xui-iconwrapper xui-iconwrapper-medium']"));
+		TimeZone.click();
+		Thread.sleep(2000);
+		WebElement PSTTimeZone = driver.findElement(By.xpath("//span[contains(text(),'(UTC-08:00) Pacific Time (US & Canada)')]"));
+		PSTTimeZone.click();
+		Thread.sleep(2000);
+		WebElement OrgDo = driver.findElement(By.xpath("//input[@id='ed3e461e-c479-4d8e-95cf-c6b5b7870d7a-control']"));
+		OrgDo.sendKeys("Accounting");
+		Thread.sleep(3000);
+		WebElement AccountingSoftware = driver.findElement(By.xpath("//button[@class='xui-button xui-select--button xui-select--button-no-variant xui-textcolor-faint xui-button-standard xui-button-medium xui-button-fullwidth']"));
+		AccountingSoftware.click();
+		Thread.sleep(2000);
+		WebElement PreviousAccSoftware = driver.findElement(By.xpath("//span[contains(text(),'Wave')]"));
+		PreviousAccSoftware.click();
+		Thread.sleep(2000);
+		WebElement BuyNow=driver.findElement(By.xpath("//button[@class='xui-button xui-actions--secondary xui-button-standard xui-button-medium']"));
+		BuyNow.click();
+		Thread.sleep(5000);
+		System.out.println("Navigated to purchase plan");
+		
+}
 }
 
 
