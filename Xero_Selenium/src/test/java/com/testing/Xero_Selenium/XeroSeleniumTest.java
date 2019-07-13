@@ -24,7 +24,8 @@ public class XeroSeleniumTest{
 		//LogoutFunctionality_4A();
 		//UpLoadProfileImage_6A();
 		//AddAnotherOrgTrailVersion_8A();
-		AddAnotherOrgPaidVersion_8B();
+		//AddAnotherOrgPaidVersion_8B();
+		SubscriptionandBilling_10A();
 	}
 	
 	
@@ -613,7 +614,7 @@ public class XeroSeleniumTest{
 		Thread.sleep(2000);
 }
 */
-public static void AddAnotherOrgPaidVersion_8B() throws InterruptedException{
+/*public static void AddAnotherOrgPaidVersion_8B() throws InterruptedException{
 		
 		System.out.println("Add Another Organization PaidVersion");
 		
@@ -688,6 +689,32 @@ public static void AddAnotherOrgPaidVersion_8B() throws InterruptedException{
 		Thread.sleep(5000);
 		System.out.println("Navigated to purchase plan");
 		
+}*/
+public static void SubscriptionandBilling_10A() throws InterruptedException{
+	
+	System.out.println("Subscription and Billing");
+	
+	System.setProperty("webdriver.chrome.driver","C:\\Jyothi\\drivers\\chromedriver.exe");
+	WebDriver driver;
+	driver = new ChromeDriver();
+	driver.get("https://login.xero.com/");
+	
+	WebElement userName = driver.findElement(By.xpath("//input[@id='email']"));
+	userName.sendKeys("jyothipraveena194@gmail.com");
+	
+	System.out.println("email Entered");
+	
+	WebElement passWord =driver.findElement(By.xpath("//input[@id='password']"));
+	passWord.sendKeys("Xero1234");
+	System.out.println("password Entered");
+	
+	WebElement loginButton = driver.findElement(By.xpath("//button[@id='submitButton']"));
+	loginButton.click();
+	System.out.println("login successful");
+	
+	Thread.sleep(2000);	
+	
+	
 }
 }
 
