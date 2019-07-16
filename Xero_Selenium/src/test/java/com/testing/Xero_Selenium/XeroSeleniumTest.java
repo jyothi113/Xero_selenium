@@ -22,7 +22,7 @@ public class XeroSeleniumTest{
 		//SignupToXDC_2E();
 		//TestAllTabs_3A();
 		//LogoutFunctionality_4A();
-		//UpLoadProfileImage_6A();
+		UpLoadProfileImage_6A();
 		//AddAnotherOrgTrailVersion_8A();
 		//AddAnotherOrgPaidVersion_8B();
 		SubscriptionandBilling_10A();
@@ -483,7 +483,7 @@ public class XeroSeleniumTest{
 		Thread.sleep(2000);
 		driver.quit();
 }*/
-/*public static void UpLoadProfileImage_6A() throws InterruptedException{
+public static void UpLoadProfileImage_6A() throws InterruptedException{
 		
 		System.out.println("Upload Profile Image");
 		
@@ -526,8 +526,8 @@ public class XeroSeleniumTest{
 		
 		//WebElement Imageoption = driver.findElement(By.xpath("//div[@class='no-avatar']"));
 		//Imageoption.sendKeys("C:\\Users\\adudi\\Desktop");
-		WebElement browseButton = driver.findElement(By.xpath("//input[@id='filefield-1188-button-fileInputEl']"));
-		browseButton.click();
+		WebElement browseButton = driver.findElement(By.xpath("//input[@id='filefield-1174-button-fileInputEl']"));
+		browseButton.sendKeys("C:\\Users\\adudi\\Desktop\\Koala.jpg");
 		Thread.sleep(5000);
 		System.out.println("Browse Button clicked");
 		//browseButton.sendKeys("C:\\Users\\adudi\\Desktop");
@@ -535,12 +535,13 @@ public class XeroSeleniumTest{
 		
 		
 	
-		WebElement UploadButton = driver.findElement(By.xpath("//div[@id='button-1178']"));
+		WebElement UploadButton = driver.findElement(By.xpath("//span[@id='button-1178-btnInnerEl']"));
 		UploadButton.click();
 		Thread.sleep(2000);
+		System.out.println("Photo is uploadedand image is displayed");
 		
 	
-}*/
+}
 /*public static void AddAnotherOrgTrailVersion_8A() throws InterruptedException{
 		
 		System.out.println("Add Another Organization TrailVersion");
