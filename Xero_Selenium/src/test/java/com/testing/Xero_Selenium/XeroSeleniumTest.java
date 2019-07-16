@@ -524,13 +524,12 @@ public static void UpLoadProfileImage_6A() throws InterruptedException{
 		System.out.println("UploadImage Button clicked");
 		
 		
-		//WebElement Imageoption = driver.findElement(By.xpath("//div[@class='no-avatar']"));
-		//Imageoption.sendKeys("C:\\Users\\adudi\\Desktop");
+		
 		WebElement browseButton = driver.findElement(By.xpath("//input[@id='filefield-1174-button-fileInputEl']"));
 		browseButton.sendKeys("C:\\Users\\adudi\\Desktop\\Koala.jpg");
 		Thread.sleep(5000);
 		System.out.println("Browse Button clicked");
-		//browseButton.sendKeys("C:\\Users\\adudi\\Desktop");
+		
 		
 		
 		
